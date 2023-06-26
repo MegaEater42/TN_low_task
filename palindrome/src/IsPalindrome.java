@@ -1,9 +1,4 @@
-public class isPalindrome {
-    public static boolean checkWithReverse(String str) {
-        String tmp = str.replaceAll("\\s+", "").toLowerCase();
-        return tmp.contentEquals(new StringBuilder(tmp).reverse());
-    }
-
+public class IsPalindrome {
     public static boolean checkWithAt(String str) {
         String tmp = str.replaceAll("\\s+", "").toLowerCase();
         int n = tmp.length();
