@@ -1,5 +1,7 @@
 public class IsPalindrome {
     public static boolean checkWithAt(String str) {
+        if(str == null)
+            return false;
         String tmp = str.replaceAll("\\s+", "").toLowerCase();
         int n = tmp.length();
         for(int i = 0; i < n / 2; i++)
