@@ -8,7 +8,7 @@ public class Main {
         String s = scanner.nextLine();
 
         System.out.print("Проверка с использованием charAt(): ");
-        if (IsPalindrome.checkWithAt(s)) {
+        if (Palindrome.checkWithAt(s)) {
             System.out.println("Введённая строка - палиндром");
         } else {
             System.out.println("Введённая строка - не палиндром");
