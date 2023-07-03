@@ -3,21 +3,17 @@ import java.util.Arrays;
 class DeleteDuplicate {
     public static int[] deleteDuplicateInt(int[] a) {
         int[] resultArr = a;
-        int writePosition = 0;
+        int resultArrLen = a.length;
 
-        for (int readPosition = 0; readPosition < a.length; readPosition++) {
-            int i = 0;
-            while (i < writePosition) {
-                if (resultArr[readPosition] == resultArr[i])
-                    break;
-                i++;
-            }
-            if (i == writePosition) {
-                resultArr[writePosition++] = resultArr[readPosition];
+        for (int i = 0, uniqueElements; i < resultArrLen; i++, resultArrLen = uniqueElements) {
+            for (int j = uniqueElements = i + 1; j < resultArrLen; j++) {
+                if (resultArr[j] != resultArr[i]) {
+                    resultArr[uniqueElements++] = resultArr[j];
+                }
             }
         }
-        resultArr = Arrays.copyOfRange(resultArr, 0, writePosition);
 
+        resultArr = Arrays.copyOfRange(resultArr, 0, resultArrLen);
         return resultArr;
     }
 }
